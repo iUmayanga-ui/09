@@ -1,6 +1,7 @@
 
-### Task 1: Save your student number, name, age, and address to an external text file called `output.txt`.
+Here are the C programs for the specified tasks without comments:
 
+### Task 1: Save Student Details to `output.txt`
 ```c
 #include <stdio.h>
 
@@ -18,12 +19,11 @@ int main() {
     int age;
     char address[100];
 
-    // Input from user
     printf("Enter your student number: ");
     scanf("%d", &student_number);
 
     printf("Enter your name: ");
-    scanf(" %[^\n]", name);  // %[^\n] is used to take multi-word input
+    scanf(" %[^\n]", name);
 
     printf("Enter your age: ");
     scanf("%d", &age);
@@ -31,7 +31,6 @@ int main() {
     printf("Enter your address: ");
     scanf(" %[^\n]", address);
 
-    // Write to file
     fprintf(file, "Student Number: %d\n", student_number);
     fprintf(file, "Name: %s\n", name);
     fprintf(file, "Age: %d\n", age);
@@ -45,8 +44,7 @@ int main() {
 }
 ```
 
-### Task 2: Use C library functions to perform various mathematical operations on a user input.
-
+### Task 2: Perform Mathematical Operations
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -69,29 +67,25 @@ int main() {
 }
 ```
 
-### Task 3: Print out your name, student ID, and address using a function.
-
+### Task 3: Print Personal Information
 ```c
 #include <stdio.h>
 
-// Function prototype
 void personal_info();
 
 int main() {
-    personal_info();  // Function call
+    personal_info();
     return 0;
 }
 
-// Function definition
 void personal_info() {
-    printf("Name: John Doe\n");           // Replace with your name
-    printf("Student ID: 12345678\n");      // Replace with your student ID
-    printf("Address: 123 Main St.\n");     // Replace with your address
+    printf("Name: John Doe\n");
+    printf("Student ID: 12345678\n");
+    printf("Address: 123 Main St.\n");
 }
 ```
 
-### Task 4: Find the largest of three user-input numbers.
-
+### Task 4: Find the Largest of Three Numbers
 ```c
 #include <stdio.h>
 
@@ -118,8 +112,7 @@ int main() {
 }
 ```
 
-### Task 5: Develop a simple calculator using functions for addition, subtraction, multiplication, and division.
-
+### Task 5: Simple Calculator
 ```c
 #include <stdio.h>
 
@@ -178,75 +171,10 @@ int main() {
 }
 ```
 
-### Task 6: Calculate the factorial of a given number using a function.
-
+### Task 6: Factorial Function
 ```c
 #include <stdio.h>
 
-unsigned long long factorial(int n) {
-    if (n == 0)
-        return 1;
-    else
-        return n * factorial(n - 1);
-}
-
-int main() {
-    int num;
-
-    printf("Enter a number to calculate its factorial: ");
-    scanf("%d", &num);
-
-    printf("Factorial of %d is %llu\n", num, factorial(num));
-
-    return 0;
-}
-```
-
-### Task 7: Write a function to find the largest digit in an integer and its leading digit.
-
-```c
-#include <stdio.h>
-
-int largest_digit(int n) {
-    int largest = 0;
-
-    while (n > 0) {
-        int digit = n % 10;
-        if (digit > largest)
-            largest = digit;
-        n /= 10;
-    }
-
-    return largest;
-}
-
-int leading_digit(int n) {
-    while (n >= 10) {
-        n /= 10;
-    }
-    return n;
-}
-
-int main() {
-    int num;
-
-    printf("Enter an integer: ");
-    scanf("%d", &num);
-
-    printf("Largest digit: %d\n", largest_digit(num));
-    printf("Leading digit: %d\n", leading_digit(num));
-
-    return 0;
-}
-```
-### Task 6: Factorial Function in C
-
-Here's a C program that defines a value-returning function to calculate the factorial of a given number. The main function calls this factorial function and tests it.
-
-```c
-#include <stdio.h>
-
-// Function to calculate the factorial of a given number
 unsigned long long factorial(int n) {
     if (n == 0 || n == 1)
         return 1;
@@ -257,11 +185,9 @@ unsigned long long factorial(int n) {
 int main() {
     int num;
 
-    // Input from the user
     printf("Enter a number to calculate its factorial: ");
     scanf("%d", &num);
 
-    // Call the factorial function and print the result
     if (num < 0) {
         printf("Factorial is not defined for negative numbers.\n");
     } else {
@@ -272,14 +198,10 @@ int main() {
 }
 ```
 
-### Task 7: Leading Digit Function in C
-
-This program defines a value-returning function that takes a positive integer as input and returns the leading digit in its decimal representation.
-
+### Task 7: Find the Leading Digit
 ```c
 #include <stdio.h>
 
-// Function to return the leading digit of a given positive integer
 int leading_digit(int n) {
     while (n >= 10) {
         n /= 10;
@@ -290,15 +212,12 @@ int leading_digit(int n) {
 int main() {
     int num;
 
-    // Input from the user
     printf("Enter a positive integer: ");
     scanf("%d", &num);
 
-    // Check if the number is positive
     if (num <= 0) {
         printf("Please enter a positive integer.\n");
     } else {
-        // Call the leading_digit function and print the result
         printf("The leading digit of %d is %d\n", num, leading_digit(num));
     }
 
@@ -306,13 +225,4 @@ int main() {
 }
 ```
 
-### Explanation:
-- **Task 6:** 
-  - The `factorial` function uses recursion to calculate the factorial of a given number. It multiplies the number by the factorial of the number minus one until it reaches the base case of 0 or 1.
-  - The main function takes user input, calls the `factorial` function, and displays the result. The program handles negative inputs by printing an error message.
-  
-- **Task 7:**
-  - The `leading_digit` function repeatedly divides the input number by 10 until only the leading digit remains, which is then returned.
-  - The main function ensures that the input is positive before calling `leading_digit`, and it outputs the leading digit.
-
-These programs fulfill the requirements for Tasks 6 and 7. Let me know if you need any further assistance!
+These are the C programs you requested, without comments. Let me know if you need any further assistance!
